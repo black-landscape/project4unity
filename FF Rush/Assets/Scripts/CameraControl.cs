@@ -5,12 +5,12 @@ public class CameraControl : MonoBehaviour
 {
     public float xSmooth = 8f;      // How smoothly the camera catches up with it's target movement in the x axis.
     public float ySmooth = 8f;		// How smoothly the camera catches up with it's target movement in the y axis.
-    private Transform player;       // Reference to the player's transform.
+	private Transform _player;       // Reference to the player's transform.
 
     // Use this for initialization
     void Start ()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        this._player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -24,6 +24,11 @@ public class CameraControl : MonoBehaviour
         TrackPlayer();
     }
 
+	void OnPostRender() 
+	{
+		
+	}
+
 
     void TrackPlayer()
     {
@@ -34,11 +39,11 @@ public class CameraControl : MonoBehaviour
         // If the player has moved beyond the x margin...
         // ... the target x coordinate should be a Lerp between the camera's current x position and the player's current x position.
         //targetX = Mathf.Lerp(transform.position.x, player.position.x, xSmooth * Time.deltaTime);
-        targetX = player.position.x;
+        targetX = _player.position.x;
 
         // If the player has moved beyond the y margin...
         // ... the target y coordinate should be a Lerp between the camera's current y position and the player's current y position.
-        targetY = Mathf.Lerp(transform.position.y, player.position.y, ySmooth * Time.deltaTime);
+        targetY = Mathf.Lerp(transform.position.y, _player.position.y, ySmooth * Time.deltaTime);
 
         // Set the camera's position to the target position with the same z component.
         //transform.position = new Vector3(targetX, targetY, transform.position.z);
