@@ -31,10 +31,12 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //this._rigidbody2D.MovePosition(this._rigidbody2D.position + Vector2.up);
-
-            this._isJumping = true;
-            this._rigidbody2D.AddForce(Vector2.up * this._forceY);
-            this._rigidbody2D.gravityScale = this._sgravity;
+            if (!this._isJumping)
+            {
+                this._isJumping = true;
+                this._rigidbody2D.AddForce(Vector2.up * this._forceY);
+                this._rigidbody2D.gravityScale = this._sgravity;
+            }
         }
 
         if (this._isJumping)
