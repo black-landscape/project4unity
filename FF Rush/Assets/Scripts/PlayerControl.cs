@@ -21,7 +21,6 @@ public class PlayerControl : MonoBehaviour
         this._transform = this.gameObject.GetComponent<Transform>();
 	    this._rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
         this._rigidbody2D.AddForce(Vector2.right * 2000);
-
         
     }
 
