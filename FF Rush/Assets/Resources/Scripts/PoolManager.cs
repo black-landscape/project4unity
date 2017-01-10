@@ -34,7 +34,6 @@ public class PoolManager : MonoBehaviour
         this.checkInit();
 
         GameObject obj;
-        obj = Instantiate(beamPrefab) as GameObject;
 
         if (this._poolDict.ContainsKey(key) && this._poolDict[key].Count > 0)
         {
