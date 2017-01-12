@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControl : MonoBehaviour
+public class GPlayerControl : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     private Transform _transform;

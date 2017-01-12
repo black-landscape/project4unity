@@ -77,12 +77,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Scripts\CameraControl.cs" />
-    <Compile Include="Assets\Resources\Scripts\GameConst.cs" />
-    <Compile Include="Assets\Resources\Scripts\PlayerControl.cs" />
-    <Compile Include="Assets\Resources\Scripts\PoolManager.cs" />
-    <Compile Include="Assets\Resources\Scripts\BeamControl.cs" />
-    <Compile Include="Assets\Resources\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Resources\Scripts\const\GameConst.cs" />
+    <Compile Include="Assets\Resources\Scripts\design\DBeamControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\design\DCameraControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\game\GCameraControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\game\GPlayerControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\manager\PoolManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\manager\Singleton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

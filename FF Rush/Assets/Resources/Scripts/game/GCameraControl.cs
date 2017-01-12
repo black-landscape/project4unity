@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraControl : MonoBehaviour
+public class GCameraControl : MonoBehaviour
 {
     public float xSmooth = 8f;      // How smoothly the camera catches up with it's target movement in the x axis.
     public float ySmooth = 8f;		// How smoothly the camera catches up with it's target movement in the y axis.
