@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     private float _sgravity = 2.0f;
     private float _egravity = 6.0f;
     private float _forceX = 4.0f;
-    private float _forceY = 500.0f;
+    private float _forceY = 650.0f;
 
     private bool _isJumping = false;
 
@@ -20,31 +20,32 @@ public class PlayerControl : MonoBehaviour
 
     private int _jumpCounter;
 
-    private int _maxJumpCount = 2;
+    private int _maxJumpCount = 1;
 
 
-	// Use this for initialization
-	void Start ()
-	{
+    // Use this for initialization
+    void Start()
+    {
         this._transform = this.gameObject.GetComponent<Transform>();
-	    this._rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
+        this._rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
+        // this._rigidbody2D.gravityScale = this._egravity;
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && this._jumpCounter < this._maxJumpCount)
+        if (((Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began) || Input.GetKeyDown(KeyCode.Space)) && this._jumpCounter < this._maxJumpCount)
         {
-            this._rigidbody2D.velocity = new Vector2(this._rigidbody2D.velocity.x, 0.0F);
+            // this._rigidbody2D.velocity = new Vector2(this._rigidbody2D.velocity.x, 0.0F);
             this._rigidbody2D.AddForce(Vector2.up * this._forceY);
             this._rigidbody2D.gravityScale = this._sgravity;
-            this._jumpCounter ++;
+            this._jumpCounter++;
             this._isJumping = true;
         }
 
         // if(!this._isJumping)
         // {
-        //     this._rigidbody2D.gravityScale = this._egravity;
+        this._rigidbody2D.gravityScale = this._egravity;
         // }
 
 
@@ -53,14 +54,15 @@ public class PlayerControl : MonoBehaviour
             this._cy = this._transform.position.y;
             if (0 != this._oy)
             {
-                if (this._cy - this._oy >= this._moveGapY*this._jumpCounter)
+                if (this._cy - this._oy >= this._moveGapY * this._jumpCounter)
                 {
-                    // this._isJumping = false;
+                    this._isJumping = false;
                     this._rigidbody2D.gravityScale = this._egravity;
                 }
                 else
                 {
 
+                    // this._rigidbody2D.gravityScale = 1;
                 }
             }
             else
@@ -78,6 +80,11 @@ public class PlayerControl : MonoBehaviour
         //this._rigidbody2D.MovePosition(this._rigidbody2D.position + Vector2.right);
 
         this._rigidbody2D.velocity = this._velocity;
+    }
+
+    void reset()
+    {
+        this._rigidbody2D.position = new Vector2(0, this._rigidbody2D.position.y);
     }
 
     void OnCollisionEnter2D(Collision2D col)
