@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (((Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began) || Input.GetKeyDown(KeyCode.Space)) && this._jumpCounter < this._maxJumpCount)
         {
@@ -72,15 +72,18 @@ public class PlayerControl : MonoBehaviour
         }
 
         this._velocity = new Vector2(this._forceX, this._rigidbody2D.velocity.y);
-    }
-
-    void FixedUpdate()
-    {
-        //this._rigidbody2D.AddForce(Vector2.right * 10);
-        //this._rigidbody2D.MovePosition(this._rigidbody2D.position + Vector2.right);
 
         this._rigidbody2D.velocity = this._velocity;
+
     }
+
+    // void FixedUpdate()
+    // {
+    //this._rigidbody2D.AddForce(Vector2.right * 10);
+    //this._rigidbody2D.MovePosition(this._rigidbody2D.position + Vector2.right);
+
+    // this._rigidbody2D.velocity = this._velocity;
+    // }
 
     void reset()
     {
