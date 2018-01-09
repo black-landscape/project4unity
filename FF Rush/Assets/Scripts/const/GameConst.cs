@@ -1,7 +1,11 @@
 public class GameConst
 {
-    public static int RUNNING_NORMAL_SPEED = 4;     //奔跑状态通常移动速度;
-    public static int RUNNING_NORMAL_GRAVITY = 6;   //奔跑状态通常重力
-    public static int RUNNING_JUMP_GRAVITY = 2;   //奔跑状态跳起重力
-    public static int RUNNING_JUMP_GAP = 1300;      //奔跑状态跳起距离
+    //----------------------------------DASH--------------------------------------------
+    public static int DASH_RIGHT_SPEED = 4;     //冲刺状态通常移动速度;
+    public static int DASH_NORMAL_GRAVITY = 6;   //冲刺状态通常重力
+    public static int DASH_NORMAL_JUMP_GAP = 1300;      //冲刺状态跳起距离
+
+    public static int DASH_LEFT_SPEED = -4;     //冲刺状态通常移动速度;
+    public static int DASH_REVERSE_GRAVITY = -6;   //冲刺状态通常重力
+    public static int DASH_REVERSE_JUMP_GAP = -1300;      //冲刺状态跳起距离
 }

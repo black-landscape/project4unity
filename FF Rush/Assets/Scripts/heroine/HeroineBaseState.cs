@@ -7,6 +7,9 @@ using System.Collections;
 
 public class HeroineBaseState
 {
+    public ActiveTriggerEnum activeTrigger;
+    public PassiveTriggerEnum passiveTrigger;
+
     protected HeroineBase _heroine;
 
     public HeroineBase heroine
@@ -19,5 +22,6 @@ public class HeroineBaseState
 
     public virtual void FixedUpdate() { }
     public virtual void ActiveState() { }
-    public virtual void OnCollisionEnter2D(Collision2D col) { }
+    public virtual void OnCollisionEnter2D(Collision2D other) { }
+    public virtual void OnTriggerEnter2D(Collider2D other) { }
 }

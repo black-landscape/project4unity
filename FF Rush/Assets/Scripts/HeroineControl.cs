@@ -55,19 +55,27 @@ public class HeroineControl : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (this._heroine != null)
         {
-            this._heroine.OnCollisionEnter2D(col);
+            this._heroine.OnCollisionEnter2D(other);
         }
     }
 
-    void OnCollisionExit2D(Collision2D col)
+    void OnCollisionExit2D(Collision2D other)
     {
         if (this._heroine != null)
         {
-            this._heroine.OnCollisionExit2D(col);
+            this._heroine.OnCollisionExit2D(other);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (this._heroine != null)
+        {
+            this._heroine.OnTriggerEnter2D(other);
         }
     }
 

@@ -5,11 +5,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class DashSlashState : HeroineBaseState
+public class DashSlashState : HeroineDashState
 {
     public override void ActiveState()
     {
-        this._heroine.stateName = DashStateConst.DashRunState;
+        this.heroineDash.stateName = DashStateConst.DashRunState;
     }
 
     public override void FixedUpdate()

@@ -54,15 +54,23 @@
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\CanvasControl.cs" />
      <Compile Include="Assets\Scripts\const\GameConst.cs" />
-     <Compile Include="Assets\Scripts\heroine\Heroine.cs" />
+     <Compile Include="Assets\Scripts\const\GameTagConst.cs" />
+     <Compile Include="Assets\Scripts\const\HeroinePatternConst.cs" />
+     <Compile Include="Assets\Scripts\enum\ActiveTriggerEnum.cs" />
+     <Compile Include="Assets\Scripts\enum\AdvanceDirectEnum.cs" />
+     <Compile Include="Assets\Scripts\enum\GravityDirectEnum.cs" />
+     <Compile Include="Assets\Scripts\enum\PassiveTriggerEnum.cs" />
+     <Compile Include="Assets\Scripts\heroine\dash\DashFallState.cs" />
+     <Compile Include="Assets\Scripts\heroine\dash\DashJumpState.cs" />
+     <Compile Include="Assets\Scripts\heroine\dash\DashRunState.cs" />
+     <Compile Include="Assets\Scripts\heroine\dash\DashSlashState.cs" />
+     <Compile Include="Assets\Scripts\heroine\dash\DashStandState.cs" />
+     <Compile Include="Assets\Scripts\heroine\dash\DashStateConst.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineBase.cs" />
      <Compile Include="Assets\Scripts\heroine\HeroineBaseState.cs" />
-     <Compile Include="Assets\Scripts\heroine\HeroineJumpState.cs" />
-     <Compile Include="Assets\Scripts\heroine\HeroineRunState.cs" />
-     <Compile Include="Assets\Scripts\heroine\HeroineStandState.cs" />
-     <Compile Include="Assets\Scripts\heroine\HeroineStateConst.cs" />
-     <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\PlayerControl1.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineDash.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineDashState.cs" />
+     <Compile Include="Assets\Scripts\HeroineControl.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

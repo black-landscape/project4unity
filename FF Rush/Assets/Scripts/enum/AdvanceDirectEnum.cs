@@ -1,12 +1,10 @@
 //-------------------------------------------------------------------------------------
-//	PassiveTriggerEnum.cs
-//  被动触发点 枚举
+//	AdvanceDirectEnum.cs
+//  前进方向 枚举
 //-------------------------------------------------------------------------------------
 
-public enum PassiveTriggerEnum : int
+public enum AdvanceDirectEnum : int
 {
-    NONE = 0,
-    JUMP,
-    FALL,
-    GRAVITY,
+    RIGHT = 0,
+    LEFT,
 }

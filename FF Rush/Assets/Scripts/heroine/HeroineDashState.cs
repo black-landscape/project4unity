@@ -1,16 +1,17 @@
 //-------------------------------------------------------------------------------------
-//	HeroineDash.cs
+//	HeroineBaseState.cs
 //-------------------------------------------------------------------------------------
 
 using UnityEngine;
 using System.Collections;
-using System;
-public class HeroineDash : HeroineBase
-{
-    public HeroineDash() { }
 
-    public override void ActiveHeroine()
+public class HeroineDashState : HeroineBaseState
+{
+    public HeroineDash heroineDash
     {
-        this.stateName = DashStateConst.DashStandState;
+        get
+        {
+            return (HeroineDash)this._heroine;
+        }
     }
 }

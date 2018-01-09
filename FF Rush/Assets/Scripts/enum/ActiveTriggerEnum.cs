@@ -3,11 +3,12 @@
 //  主动触发点 枚举
 //-------------------------------------------------------------------------------------
 
-enum ActiveTriggerEnum
+public enum ActiveTriggerEnum : int
 {
-    NONE,
+    NONE = 0,
     JUMP,
     SLASH,
     FALL,
-    GRAVITY,
+    REVERSE_GRAVITY,
+    REVERSE_ADVANCE,
 }

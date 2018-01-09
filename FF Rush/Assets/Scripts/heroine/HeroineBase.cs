@@ -54,19 +54,27 @@ public class HeroineBase
         }
     }
 
-    public virtual void OnCollisionEnter2D(Collision2D col)
+    public virtual void OnCollisionEnter2D(Collision2D other)
     {
         if (this._state != null)
         {
-            this._state.OnCollisionEnter2D(col);
+            this._state.OnCollisionEnter2D(other);
         }
     }
 
-    public virtual void OnCollisionExit2D(Collision2D col)
+    public virtual void OnCollisionExit2D(Collision2D other)
     {
         // if (col.transform.tag == "Ground")
         // {
         //     this._isGrounded = false;
         // }
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (this._state != null)
+        {
+            this._state.OnTriggerEnter2D(other);
+        }
     }
 }

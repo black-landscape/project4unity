@@ -8,4 +8,5 @@ public class DashStateConst
     public static string DashRunState = "DashRunState";
     public static string DashJumpState = "DashJumpState";
     public static string DashSlashState = "DashSlashState";
+    public static string DashFallState = "DashFallState";
 }
