@@ -7,9 +7,9 @@ using System.Collections;
 
 public class HeroineBaseState
 {
-    protected Heroine _heroine;
+    protected HeroineBase _heroine;
 
-    public Heroine heroine
+    public HeroineBase heroine
     {
         set
         {
@@ -17,6 +17,7 @@ public class HeroineBaseState
         }
     }
 
-    public virtual void HandleInput() { }
+    public virtual void FixedUpdate() { }
     public virtual void ActiveState() { }
+    public virtual void OnCollisionEnter2D(Collision2D col) { }
 }

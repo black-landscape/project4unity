@@ -1,19 +1,19 @@
 //-------------------------------------------------------------------------------------
-//	StandState.cs
+//	DashStandState.cs
 //-------------------------------------------------------------------------------------
 
 using UnityEngine;
 using System.Collections;
 
-public class HeroineStandState : HeroineBaseState
+public class DashStandState : HeroineBaseState
 {
     public override void ActiveState() { }
 
-    public override void HandleInput()
+    public override void FixedUpdate()
     {
         if (((Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) || Input.GetKeyDown(KeyCode.Space)))
         {
-            this._heroine.heroStateName = HeroineStateConst.HeroineRunState;
+            this._heroine.stateName = DashStateConst.DashRunState;
         }
     }
 }
