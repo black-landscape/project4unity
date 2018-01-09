@@ -53,6 +53,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\CanvasControl.cs" />
+     <Compile Include="Assets\Scripts\const\GameConst.cs" />
+     <Compile Include="Assets\Scripts\heroine\Heroine.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineBaseState.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineJumpState.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineRunState.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineStandState.cs" />
+     <Compile Include="Assets\Scripts\heroine\HeroineStateConst.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PlayerControl1.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
