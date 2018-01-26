@@ -8,9 +8,8 @@ using System.Collections;
 public class HeroineBaseState
 {
     public ActiveTriggerEnum activeTrigger;
-    public PassiveTriggerEnum passiveTrigger;
 
-    protected HeroineBase _heroine;
+    private HeroineBase _heroine;
 
     public HeroineBase heroine
     {
@@ -18,10 +17,18 @@ public class HeroineBaseState
         {
             this._heroine = value;
         }
+        get
+        {
+            return this._heroine;
+        }
     }
 
     public virtual void FixedUpdate() { }
     public virtual void ActiveState() { }
+    public virtual void ActiveState(object data) { }
     public virtual void OnCollisionEnter2D(Collision2D other) { }
+    public virtual void OnCollisionExit2D(Collision2D other) { }
     public virtual void OnTriggerEnter2D(Collider2D other) { }
+    public virtual void OnTriggerExit2D(Collider2D other) { }
+    public virtual void Reset() { }
 }

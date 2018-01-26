@@ -19,11 +19,12 @@ public class HeroineDash : HeroineBase
         this.speed = GameConst.DASH_RIGHT_SPEED;
         this.gravity = GameConst.DASH_NORMAL_GRAVITY;
         this.jumpGap = GameConst.DASH_NORMAL_JUMP_GAP;
+        this.fallGap = GameConst.DASH_NORMAL_FALL_GAP;
     }
 
     public override void ActiveHeroine()
     {
-        this.stateName = DashStateConst.DashStandState;
+        this.ChangeState(DashStateConst.DashStandState);
         this.rgbody2D.gravityScale = this.gravity;
     }
 
@@ -34,12 +35,14 @@ public class HeroineDash : HeroineBase
             this.gravityDirect = GravityDirectEnum.REVERSE;
             this.gravity = GameConst.DASH_REVERSE_GRAVITY;
             this.jumpGap = GameConst.DASH_REVERSE_JUMP_GAP;
+            this.fallGap = GameConst.DASH_REVERSE_FALL_GAP;
         }
         else
         {
             this.gravityDirect = GravityDirectEnum.NORMAL;
             this.gravity = GameConst.DASH_NORMAL_GRAVITY;
             this.jumpGap = GameConst.DASH_NORMAL_JUMP_GAP;
+            this.fallGap = GameConst.DASH_NORMAL_FALL_GAP;
         }
         this.rgbody2D.gravityScale = this.gravity;
     }

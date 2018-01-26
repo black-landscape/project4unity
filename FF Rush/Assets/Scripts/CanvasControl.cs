@@ -4,23 +4,37 @@ using UnityEngine;
 
 public class CanvasControl : MonoBehaviour
 {
-
+    GameObject playerObject;
+    GameObject MapObject;
     // Use this for initialization
     void Start()
     {
-        //获取按钮游戏对象
-        GameObject btnObj = GameObject.Find("Canvas/Button");
-        //获取按钮脚本组件
-        UnityEngine.UI.Button btn = (UnityEngine.UI.Button)btnObj.GetComponent<UnityEngine.UI.Button>();
-        //添加点击侦听
-        btn.onClick.AddListener(onClick);
+        this.playerObject = GameObject.Find(GameObjectConst.Player);
+        this.MapObject = GameObject.Find(GameObjectConst.Map);
+
+        UnityEngine.UI.Button BtnReset = (UnityEngine.UI.Button)GameObject.Find("Canvas/BtnReset").GetComponent<UnityEngine.UI.Button>();
+        BtnReset.onClick.AddListener(OnResetClick);
+
+        UnityEngine.UI.Button BtnStart = (UnityEngine.UI.Button)GameObject.Find("Canvas/BtnStart").GetComponent<UnityEngine.UI.Button>();
+        BtnStart.onClick.AddListener(OnStartClick);
+
+        UnityEngine.UI.Button BtnGenerate = (UnityEngine.UI.Button)GameObject.Find("Canvas/BtnGenerate").GetComponent<UnityEngine.UI.Button>();
+        BtnGenerate.onClick.AddListener(OnGenerateClick);
     }
 
-    void onClick()
+    void OnResetClick()
     {
-        GameObject btnObj = GameObject.Find("Player");
+        this.playerObject.SendMessage("ResetGame", SendMessageOptions.RequireReceiver);
+    }
 
-        btnObj.SendMessage("reset", SendMessageOptions.RequireReceiver);
+    void OnStartClick()
+    {
+        this.playerObject.SendMessage("StartGame", SendMessageOptions.RequireReceiver);
+    }
+
+    void OnGenerateClick()
+    {
+        this.MapObject.SendMessage("GenerateMap", SendMessageOptions.RequireReceiver);
     }
 
     // Update is called once per frame

@@ -19,9 +19,9 @@ public class DashFallState : HeroineDashState
 
     public override void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.transform.tag == "Ground")
+        if (other.transform.tag == GameTagConst.Ground)
         {
-            this.heroineDash.stateName = DashStateConst.DashRunState;
+            this.heroineDash.ChangeState(DashStateConst.DashRunState);
         }
     }
 }

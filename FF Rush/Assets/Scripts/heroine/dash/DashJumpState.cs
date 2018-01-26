@@ -20,7 +20,7 @@ public class DashJumpState : HeroineDashState
     {
         if (other.transform.tag == GameTagConst.Ground)
         {
-            this.heroineDash.stateName = DashStateConst.DashRunState;
+            this.heroineDash.ChangeState(DashStateConst.DashRunState);
         }
     }
 

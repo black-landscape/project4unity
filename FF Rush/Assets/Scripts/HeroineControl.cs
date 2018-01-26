@@ -79,8 +79,21 @@ public class HeroineControl : MonoBehaviour
         }
     }
 
-    void reset()
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (this._heroine != null)
+        {
+            this._heroine.OnTriggerEnter2D(other);
+        }
+    }
+
+    void ResetGame()
     {
         this.rgbody2D.position = new Vector2(0, Mathf.Round(this.rgbody2D.position.y));
+    }
+
+    void StarGame()
+    {
+
     }
 }

@@ -11,9 +11,9 @@ public class DashStandState : HeroineDashState
 
     public override void FixedUpdate()
     {
-        if (((Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) || Input.GetKeyDown(KeyCode.Space)))
+        if (InputUtil.touchOnce())
         {
-            this.heroineDash.stateName = DashStateConst.DashRunState;
+            this.heroineDash.ChangeState(DashStateConst.DashRunState);
         }
     }
 }

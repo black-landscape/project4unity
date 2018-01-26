@@ -11,7 +11,7 @@ public class HeroineDashState : HeroineBaseState
     {
         get
         {
-            return (HeroineDash)this._heroine;
+            return (HeroineDash)this.heroine;
         }
     }
 }

@@ -9,7 +9,7 @@ public class DashSlashState : HeroineDashState
 {
     public override void ActiveState()
     {
-        this.heroineDash.stateName = DashStateConst.DashRunState;
+        this.heroineDash.ChangeState(DashStateConst.DashRunState);
     }
 
     public override void FixedUpdate()

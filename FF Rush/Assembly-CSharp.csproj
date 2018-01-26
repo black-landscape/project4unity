@@ -54,10 +54,12 @@
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\CanvasControl.cs" />
      <Compile Include="Assets\Scripts\const\GameConst.cs" />
+     <Compile Include="Assets\Scripts\const\GameObjectConst.cs" />
      <Compile Include="Assets\Scripts\const\GameTagConst.cs" />
      <Compile Include="Assets\Scripts\const\HeroinePatternConst.cs" />
      <Compile Include="Assets\Scripts\enum\ActiveTriggerEnum.cs" />
      <Compile Include="Assets\Scripts\enum\AdvanceDirectEnum.cs" />
+     <Compile Include="Assets\Scripts\enum\DirectionEnum.cs" />
      <Compile Include="Assets\Scripts\enum\GravityDirectEnum.cs" />
      <Compile Include="Assets\Scripts\enum\PassiveTriggerEnum.cs" />
      <Compile Include="Assets\Scripts\heroine\dash\DashFallState.cs" />
@@ -71,6 +73,9 @@
      <Compile Include="Assets\Scripts\heroine\HeroineDash.cs" />
      <Compile Include="Assets\Scripts\heroine\HeroineDashState.cs" />
      <Compile Include="Assets\Scripts\HeroineControl.cs" />
+     <Compile Include="Assets\Scripts\MapControl.cs" />
+     <Compile Include="Assets\Scripts\util\GameUtil.cs" />
+     <Compile Include="Assets\Scripts\util\InputUtil.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

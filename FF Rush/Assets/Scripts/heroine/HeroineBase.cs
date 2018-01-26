@@ -19,30 +19,38 @@ public class HeroineBase
 
     public virtual void ActiveHeroine() { }
 
+    public void ChangeState(string value, object data = null)
+    {
+        if (this._stateName == "" && this._stateName == value)
+        {
+            return;
+        }
+        this._stateName = value;
+        if (this._stateMap.Contains(this._stateName))
+        {
+            this._state = (HeroineBaseState)this._stateMap[this._stateName];
+        }
+        else
+        {
+            this._state = (HeroineBaseState)Activator.CreateInstance(Type.GetType(this._stateName), true);//根据类型创建实例
+            this._state.heroine = this;
+            this._stateMap.Add(this._stateName, this._state);
+        }
+        if (data != null)
+        {
+            this._state.ActiveState(data);
+        }
+        else
+        {
+            this._state.ActiveState();
+        }
+    }
+
     public string stateName
     {
         get
         {
             return this._stateName;
-        }
-        set
-        {
-            if (this._stateName == "" && this._stateName == value)
-            {
-                return;
-            }
-            this._stateName = value;
-            if (this._stateMap.Contains(this._stateName))
-            {
-                this._state = (HeroineBaseState)this._stateMap[this._stateName];
-            }
-            else
-            {
-                this._state = (HeroineBaseState)Activator.CreateInstance(Type.GetType(this._stateName), true);//根据类型创建实例
-                this._state.heroine = this;
-                this._stateMap.Add(this._stateName, this._state);
-            }
-            this._state.ActiveState();
         }
     }
 
@@ -64,10 +72,10 @@ public class HeroineBase
 
     public virtual void OnCollisionExit2D(Collision2D other)
     {
-        // if (col.transform.tag == "Ground")
-        // {
-        //     this._isGrounded = false;
-        // }
+        if (this._state != null)
+        {
+            this._state.OnCollisionExit2D(other);
+        }
     }
 
     public virtual void OnTriggerEnter2D(Collider2D other)
@@ -75,6 +83,14 @@ public class HeroineBase
         if (this._state != null)
         {
             this._state.OnTriggerEnter2D(other);
+        }
+    }
+
+    public virtual void OnTriggerExit2D(Collider2D other)
+    {
+        if (this._state != null)
+        {
+            this._state.OnTriggerExit2D(other);
         }
     }
 }
