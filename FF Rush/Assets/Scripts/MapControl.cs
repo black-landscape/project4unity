@@ -13,7 +13,7 @@ public class MapControl : MonoBehaviour
     }
     void GenerateMap()
     {
-        Transform[] grandFa = GetComponentsInChildren<Transform>();
+        // Transform[] grandFa = GetComponentsInChildren<Transform>();
 
 
         foreach (Component component in this.gameObject.GetComponents<Component>())

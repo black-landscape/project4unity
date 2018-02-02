@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CanvasControl : MonoBehaviour
 {
-    GameObject playerObject;
+    GameObject HeroObject;
     GameObject MapObject;
     // Use this for initialization
     void Start()
     {
-        this.playerObject = GameObject.Find(GameObjectConst.Player);
+        this.HeroObject = GameObject.Find(GameObjectConst.Hero);
         this.MapObject = GameObject.Find(GameObjectConst.Map);
 
         UnityEngine.UI.Button BtnReset = (UnityEngine.UI.Button)GameObject.Find("Canvas/BtnReset").GetComponent<UnityEngine.UI.Button>();
@@ -24,12 +24,12 @@ public class CanvasControl : MonoBehaviour
 
     void OnResetClick()
     {
-        this.playerObject.SendMessage("ResetGame", SendMessageOptions.RequireReceiver);
+        this.HeroObject.SendMessage("ResetGame", SendMessageOptions.RequireReceiver);
     }
 
     void OnStartClick()
     {
-        this.playerObject.SendMessage("StartGame", SendMessageOptions.RequireReceiver);
+        this.HeroObject.SendMessage("StartGame", SendMessageOptions.RequireReceiver);
     }
 
     void OnGenerateClick()
